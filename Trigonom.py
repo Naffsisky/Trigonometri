@@ -1,5 +1,5 @@
 #Author : PRINAFSIKA (21081010278)
-
+from math import pi, radians, degrees, sin, cos, tan, asin, acos, atan
 import pyfiglet
 import os
 
