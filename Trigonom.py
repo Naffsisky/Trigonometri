@@ -71,13 +71,35 @@ if menu == 1:
 elif menu == 2:
     os.system('cls')
     print('--- Penghitungan Sudut Istimewa ---')
-    tabelinfo = PrettyTable(["Sudut", "0°", "30°", "45°", "60°", "90°"])
-    tabelinfo.add_row(["Sin", "0", "1/2", "1/2 √2", "1/2 √3", "1"])
-    tabelinfo.add_row(["Cos", "1", "1/2 √3", "1/2 √2", "1/2", "0"])
-    tabelinfo.add_row(["Tan", "0", "1/√3", "1", "√3", "∞"])
+    tabelinfo1 = PrettyTable(["Sudut", "0°", "30°", "45°", "60°", "90°"])
+    tabelinfo1.add_row(["Sin", "0", "1/2", "1/2 √2", "1/2 √3", "1"])
+    tabelinfo1.add_row(["Cos", "1", "1/2 √3", "1/2 √2", "1/2", "0"])
+    tabelinfo1.add_row(["Tan", "0", "1/√3", "1", "√3", "∞"])
 
-    print(tabelinfo)
-    pilihandua = int(input('Press 0 to exit : '))  
+    tabelinfo2 = PrettyTable(["Sudut", "90°", "120°", "135°", "150°", "180°"])
+    tabelinfo2.add_row(["Sin", "1", "1/2 √3", "1/2 √2", "1/2", "0"])
+    tabelinfo2.add_row(["Cos", "0", "-1/2", "-1/2 √2", "-1/2 √3", "-1"])
+    tabelinfo2.add_row(["Tan", "∞", "-√3", "-1", "-1/3 √3", "0"])
+
+    tabelinfo3 = PrettyTable(["Sudut", "180°", "210°", "225°", "240°", "270°"])
+    tabelinfo3.add_row(["Sin", "0", "-1/2", "-1/2 √2", "-1/2 √3", "-1"])
+    tabelinfo3.add_row(["Cos", "-1", "-1/2 √3", "-1/2 √2", "1/2", "0"])
+    tabelinfo3.add_row(["Tan", "0", "1/3 √3", "1", "√3", "∞"])
+
+    tabelinfo4 = PrettyTable(["Sudut", "270°", "300°", "315°", "330°", "360°"])
+    tabelinfo4.add_row(["Sin", "-1", "-1/2 √3", "-1/2 √2", "-1/2", "0"])
+    tabelinfo4.add_row(["Cos", "0", "1/2", "1/2 √2", "1/2 √3", "1"])
+    tabelinfo4.add_row(["Tan", "∞", "-√3", "-1", "-1/3 √3", "0"])
+
+    print(tabelinfo1)
+    print(tabelinfo2)
+    print(tabelinfo3)
+    print(tabelinfo4)
+    pilihandua = int(input('Press 0 to exit : '))
+    if pilihandua == 0:
+        exit()
+    else:
+        exit()
 
 elif menu == 3:
     sudut = int(input('Masukkan Sudut yang ingin dicari : '))
@@ -92,14 +114,46 @@ elif menu == 3:
     kuadran = int(input('Sudut tersebut berada pada Kuadran : '))
 
     if kuadran == 1:
-        print('Dalam Kuadran 1 sudut 180° akan dikurang dengan sudut anda')
-        tambahkurang = (180-sudut)
-        print('180 -', sudut, '=', tambahkurang)
+        os.system('cls')
+        print('Sudut anda adalah :', sudut)
+        print('Hanya bisa menghitung sudut Spesial!')
+
+        tabelspesial = PrettyTable(["Sudut", "0°", "30°", "45°", "60°", "90°"])
+        tabelspesial.add_row(["Sin", "0", "1/2", "1/2 √2", "1/2 √3", "1"])
+        tabelspesial.add_row(["Cos", "1", "1/2 √3", "1/2 √2", "1/2", "0"])
+        tabelspesial.add_row(["Tan", "0", "1/√3", "1", "√3", "∞"])
+
+        tabelket = PrettyTable(["Sudut", "Keterangan"])
+        tabelket.add_row(["Sin", "Positif"])
+        tabelket.add_row(["Cos", "Positif"])
+        tabelket.add_row(["Tan", "Positif"])
+        print(tabelket)
+        print(tabelspesial)
+
+        print('Maka sudut yang anda cari adalah', sudut,'°')
 
     elif kuadran == 2:
-        print('Dalam Kuadran 2 sudut 180° akan ditambah dengan sudut anda')
-        tambahkurang = (180+sudut)
-        print('180 +', sudut, '=', tambahkurang)
+        print('')
+        print('Dalam Kuadran 2 sudut 90° akan ditambah dengan total menjadi sudut anda.')
+        print('Misal Sudut anda 120°. maka 90 ditambah 30 agar menjadi 120')
+        print('')
+        print('Sudut anda adalah :', sudut)
+        tambah = int(input('Masukan tambahan : '))
+        os.system('cls')
+
+        tabelspesial = PrettyTable(["Sudut", "0°", "30°", "45°", "60°", "90°"])
+        tabelspesial.add_row(["Sin", "0", "1/2", "1/2 √2", "1/2 √3", "1"])
+        tabelspesial.add_row(["Cos", "-1", "-1/2 √3", "-1/2 √2", "-1/2", "-0"])
+        tabelspesial.add_row(["Tan", "-0", "-1/√3", "-1", "-√3", "-∞"])
+
+        tabelket = PrettyTable(["Sudut", "Keterangan"])
+        tabelket.add_row(["Sin", "Positif"])
+        tabelket.add_row(["Cos", "Negatif"])
+        tabelket.add_row(["Tan", "Negatif"])
+
+        print(tabelket)
+        print(tabelspesial)
+        print('Maka sudut yang anda cari adalah', tambah,'°')
 
     elif kuadran == 3:
         print('')
@@ -109,10 +163,12 @@ elif menu == 3:
         print('Sudut anda adalah :', sudut)
         tambah = int(input('Masukan tambahan : '))
         os.system('cls')
+
         tabelspesial = PrettyTable(["Sudut", "0°", "30°", "45°", "60°", "90°"])
         tabelspesial.add_row(["Sin", "-0", "-1/2", "-1/2 √2", "-1/2 √3", "-1"])
         tabelspesial.add_row(["Cos", "-1", "-1/2 √3", "-1/2 √2", "-1/2", "-0"])
         tabelspesial.add_row(["Tan", "0", "1/√3", "1", "√3", "∞"])
+
         print(tabelspesial)
         print('Maka sudut yang anda cari adalah', tambah,'°')
 
@@ -124,6 +180,7 @@ elif menu == 3:
         print('Sudut anda adalah :', sudut)
         tambah = int(input('Masukan tambahan : '))
         os.system('cls')
+        
         print('KETENTUAN : APABILA SUDUT ANDA SIN GANTI DENGAN COS, COS GANTI DENGAN SIN')
         tabelspesial = PrettyTable(["Sudut", "0°", "30°", "45°", "60°", "90°"])
         tabelspesial.add_row(["Sin", "-0", "-1/2", "-1/2 √2", "-1/2 √3", "-1"])
@@ -131,10 +188,14 @@ elif menu == 3:
         tabelspesial.add_row(["Tan", "-0", "-1/√3", "-1", "-√3", "-∞"])
 
         tabelket = PrettyTable(["Sudut", "Keterangan"])
-        tabelket.add_row(["Sin", "Semua Negatif"])
+        tabelket.add_row(["Sin", "Negatif"])
         tabelket.add_row(["Cos", "Positif"])
-        tabelket.add_row(["Tan", "Semua Negatif"])
+        tabelket.add_row(["Tan", "Negatif"])
         print(tabelket)
         print(tabelspesial)
 
         print('Maka sudut yang anda cari adalah', tambah,'°')
+
+    else: exit()
+
+else: exit()
