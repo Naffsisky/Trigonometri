@@ -1,5 +1,6 @@
 #Author : PRINAFSIKA (21081010278)
-from math import pi, radians, degrees, sin, cos, tan, asin, acos, atan
+import math 
+import fractions
 import pyfiglet
 import os
 
@@ -10,43 +11,61 @@ intronama = pyfiglet.figlet_format("By : Kelompok 5", font = "standard")
 print(intro)
 print(intronama)
 
-print('--- Konsep Kuadran ---')
-print('')
-print('Pada kuadran I (0 – 90), semua nilai sin, tan dan cos bernilai positif')
-print('Pada kuadran II (90 – 180), hanya sin bernilai positif')
-print('Pada kuadran II (180 – 270), hanya tan bernilai positif')
-print('Pada kuadran II (270 – 360), hanya cos bernilai positif')
-print('')
-print('1. Sin')
-print('2. Cos')
-print('3. Tan')
+print('1. Penghitungan Segitiga')
+print('2. Penghitungan Sudut Istimewa')
+menu = int(input('Masukkan Pilihan : '))
 
-pilihan = int(input('Masukkan Pilihan : '))
+if menu == 1:
+    print('--- Penghitungan Segitiga ---')
+    print('')
+    print('Sin = Depan / Miring')
+    print('Cos = Samping / Miring')
+    print('Tan = Depan / Samping')
+    print('')
+    print('1. Sin')
+    print('2. Cos')
+    print('3. Tan')
 
-if pilihan == 2:
-    os.system('cls')
-    os.system('color a')
-    print('Ini adalah penghitungan nilai Cos')
-    print('Masukan nilai Cos dan angka terdekat (0,90,180,360), Misal ')
-    print('Nilai Cos 210. Maka masukan Nilai Cos 180 dan Angka terdekat 30. 180 + 30 menjadi 210')
-    pilihanCos = int(input('Masukkan Nilai Cos : '))
-    tambahanCos = int(input('Masukan Angka terdekat :'))
-    if tambahanCos >= 360:
-        hitungCos = (pilihanCos + tambahanCos)
-        print(hitungCos)
+    pilihan = int(input('Masukkan Pilihan : '))
 
-    elif tambahanCos >= 180:
-        hitungCos = (pilihanCos + tambahanCos)
-        print(hitungCos)
+    if pilihan == 1:
+        os.system('cls')
+        os.system('color a')
+        print('Sin = Depan / Miring')
+        print('')
 
-    elif tambahanCos >= 90:
-        hitungCos = (pilihanCos + tambahanCos)
-        print(hitungCos)
+        pilihanSindepan = int(input('Masukkan Sisi Depan : '))
+        pilihanSinmiring = int(input('Masukkan Sisi Miring : '))
+        hasilSin = pilihanSindepan/pilihanSinmiring
+        f = fractions.Fraction(hasilSin)
+        print('Hasil :', hasilSin)
+        print('Hasil Dalam Pecahan :', f)
 
-    elif tambahanCos >= 0:
-        hitungCos = (pilihanCos + tambahanCos)
-        print(hitungCos)
+    elif pilihan == 2:
+        os.system('cls')
+        os.system('color a')
+        print('Cos = Samping / Miring')
+        print('')
 
-    else: print('gagal')
-        
-else: exit()
+        pilihanCossamping = int(input('Masukkan Sisi Samping : '))
+        pilihanCosmiring = int(input('Masukkan Sisi Miring : '))
+        hasilSin = pilihanCossamping/pilihanCosmiring
+        f = fractions.Fraction(hasilSin)
+        print('Hasil :', hasilSin)
+        print('Hasil Dalam Pecahan :', f)
+
+    elif pilihan == 3:
+        os.system('cls')
+        os.system('color a')
+        print('Sin = Depan / Samping')
+        print('')
+
+        pilihanTandepan = int(input('Masukkan Sisi Depan : '))
+        pilihanTanSamping = int(input('Masukkan Sisi Samping : '))
+        hasilSin = pilihanTandepan/pilihanTanSamping
+        f = fractions.Fraction(hasilSin)
+        print('Hasil :', hasilSin)
+        print('Hasil Dalam Pecahan :', f)
+
+elif menu == 2:
+    print('a')
